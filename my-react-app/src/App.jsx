@@ -1,17 +1,19 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+import React from "react";
+
+import Button from "./components/elements/button";
 
 function App() {
-
   return (
   <div className="flex justify-center bg-blue-600 min-h-screen items-center">
-    <div>
-      Hello There!
+    <div className="flex gap-x-2">
+      <Button variant="bg-red-700" text="Login">Login</Button>
+      <Button variant="bg-blue-700" text="Register">Register</Button>
+      <Button variant="bg-slate-700" text="Logout">Logout</Button>
+      <Button variant="bg-black">Register</Button>
     </div>
   </div>
   );
 }
+
 
 export default App;
