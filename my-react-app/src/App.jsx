@@ -1,16 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-no-undef */
 import React from "react";
-
-import Button from "./components/elements/button";
+import LoginPage from "./pages/login";
+import RegisterPage from "./pages/register";
 
 function App() {
-  return (
-  <div className="flex justify-center bg-blue-600 min-h-screen items-center">
-    <div className="flex gap-x-2">
-      <Button variant="bg-red-700" text="Login">Login</Button>
-      <Button variant="bg-blue-700" text="Register">Register</Button>
-      <Button variant="bg-slate-700" text="Logout">Logout</Button>
-      <Button variant="bg-black">Register</Button>
-    </div>
+  return ( 
+  <div className="flex justify-center min-h-screen items-center">
+    {/* <LoginPage></LoginPage> */}
+    <RegisterPage/>
   </div>
   );
 }
