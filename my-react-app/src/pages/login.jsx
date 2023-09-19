@@ -2,14 +2,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 import AuthLayout  from "../components/layouts/AuthLayouts";
 import FormLogin from "../components/Fragments/FormLogin"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
  const LoginPage = () => {
 
       return (
-            <AuthLayout title="Login">
+            <AuthLayout title="Login" type="login">
                   <FormLogin/>
-                  <p className="text-sm mt-5 text-center">Don't have an account?{" "} <Link to="/register" className="font-bold text-blue-600">Sign Up</Link></p>
             </AuthLayout>
       );
 }
