@@ -1,5 +1,9 @@
+/* eslint-disable react/display-name */
+/* eslint-disable react/prop-types */
+import { forwardRef } from "react";
+
 /* eslint-disable react/react-in-jsx-scope */
-const input = (props) => {
+const Input = forwardRef((props, ref) => {
 
       // eslint-disable-next-line no-unused-vars
       const {type, placeholder, name} = props;
@@ -9,8 +13,9 @@ const input = (props) => {
                 placeholder="{placeholder}"
                 name={name}
                 id={name}
+                ref={ref}
                 />
       );
-};
+});
 
-export default input;
+export default Input;
