@@ -7,22 +7,25 @@ import React, { Fragment, useEffect, useState, useRef } from "react";
 import Button from "../components/elements/button";
 import CardProduct from "../components/Fragments/CardProduct";
 import { getProducts } from "../services/products.service";
-// Import Counter if it's used elsewhere
+// import { Counter } from "../Component/Fragments/Counter";
+import { getUsername } from "../services/auth.service";
+import { useLogin } from "../hooks/useLogin";
 
 
-const email = localStorage.getItem('email');
+// const email = localStorage.getItem("token");
 
 const ProductsPage = () => {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [products, setProducts] = useState([]);
+  const username = useLogin()
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")) || []);
   }, []);
 
   useEffect(() => {
-    getProducts(() => {
+    getProducts((data) => {
       setProducts(data);
     });
   }, []);
@@ -39,8 +42,8 @@ const ProductsPage = () => {
   }, [cart, products]);
 
   const handleLogout = () => {
-    localStorage.removeItem('email');
-    localStorage.removeItem('password');
+    localStorage.removeItem("token");
+    localStorage.removeItem("password");
     window.location.href = "/login";
   };
 
@@ -65,7 +68,7 @@ const totalPriceRef = useRef(null);
 
 useEffect(()=> {
       if(cart.length > 0){
-            totalPriceRef.current.style.display = "table";
+            totalPriceRef.current.style.display = "table-row";
       }else{
             totalPriceRef.current.style.display = "none";
       }
@@ -74,7 +77,7 @@ useEffect(()=> {
   return (
     <Fragment>
       <div className="flex justify-end h-10 bg-blue-600 text-white items-center px-10">
-        {email}
+        {username}
         <Button className="ml-5 bg-black" onClick={handleLogout}>Logout</Button>
       </div>
       <div className="flex justify-center py-5">
