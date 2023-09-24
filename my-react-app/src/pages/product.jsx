@@ -1,4 +1,5 @@
-/* eslint-disable no-undef */
+/* eslhandleAddToCart
+int-disable no-undef */
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
@@ -111,12 +112,12 @@ useEffect(()=> {
                     <tr key={item.id}>
                       <td>{products.title.substring(0,10)}...</td>
                       <td>${" "}{productItem.price.toLocaleString("id-ID", {
-                        style: "currency",
+                        styles: "currency",
                         currency: "USD",
                       })}</td>
                       <td>{item.qty}</td>
                       <td>${" "}{(item.qty * productItem.price).toLocaleString("id-ID", {
-                        style: "currency",
+                        styles: "currency",
                         currency: "USD",
                       })}
                       </td>
@@ -129,7 +130,7 @@ useEffect(()=> {
                   </td>
                   <td>
                     ${" "}{totalPrice.toLocaleString("id-ID", {
-                      style: "currency",
+                      styles: "currency",
                       currency: "USD",
                     })}
                   </td>
