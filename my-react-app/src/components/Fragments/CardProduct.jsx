@@ -26,18 +26,23 @@ const Header = (props) => {
 };
 
 const Body = (props) => {
-      const {children, name} = props;
+      const { children, name } = props;
       return (
-            <div className="px-5 pb-5 h-full">
-            <a href="">
+        <div className="px-5 pb-5 h-full">
+          <div>
             <h5 className="text-xl font-semibold tracking-tight text-white">
-                  {name.length <= 20 ? name : `${name.substring(0, 20)}...`}
+              {name.length <= 20 ? name : `${name.substring(0, 20)}...`}
             </h5>
-            <p className="text-s text-white">{children && children.length > 100 ? `${children.substring(0, 100)}...` : children}</p>
-            </a>
-      </div>
+            <p className="text-s text-white">
+              {children && children.length > 100
+                ? `${children.substring(0, 100)}...`
+                : children}
+            </p>
+          </div>
+        </div>
       );
-};
+    };
+    
 
 const Footer = (props) => {
       const {price, id} = props;
