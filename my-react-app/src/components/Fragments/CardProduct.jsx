@@ -40,7 +40,7 @@ const Body = (props) => {
 };
 
 const Footer = (props) => {
-      const {price, handleAddToCart, id} = props;
+      const {price, id} = props;
       const dispatch = useDispatch();
       return(
             <div className="flex items-center justify-between px-5 pb-5">
