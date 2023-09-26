@@ -51,7 +51,7 @@ const TableCart = (props) => {
                 );
                 return (
                   <tr key={item.id}>
-                    <td>{products.title.substring(0,10)}...</td>
+                    <td>{productItem.title.substring(0, 10)}...</td>
                     <td>${" "}{productItem.price.toLocaleString("id-ID", {
                       styles: "currency",
                       currency: "USD",
